@@ -8,23 +8,12 @@
 
 <ion-content padding>
 
-  <!-- COUNTRIES TEST-->
-  <!--<ion-list *ngFor='let country of countries'>-->
-  
+  <!-- Entry must be exact -->  
   <ion-input placeholder="Search Country" [(ngModel)]="country" (keyup.enter)="selectCountry()"></ion-input>
-  <h4>Select Region:</h4>
+  <h5>Select Region:</h5>
   <ion-list *ngFor='let region of regions'>
     <ion-item>
-      <li (click)="selectRegion(region)"> {{region}}</li>
-      <!--
-      <ion-thumbnail item-start>
-        <img src={{country.flag}}>
-      </ion-thumbnail>
-        <h2>{{country.name}}</h2>
-        <ul>
-          <li (click)="openRegionPage()">INFO</li>
-        </ul>
-      -->
+      <li ion-label (click)="selectRegion(region)"> {{region}}</li>
     </ion-item>
   </ion-list>
 </ion-content>

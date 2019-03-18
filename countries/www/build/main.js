@@ -56,7 +56,7 @@ var RegionPage = /** @class */ (function () {
     };
     RegionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-region',template:/*ion-inline-start:"D:\ProgrammingWork\Y2S4Project_MobileAppDev\countries\src\pages\region\region.html"*/'<!--\n  Generated template for the RegionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>RegionPage</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list *ngFor=\'let c of countries\'>\n    <ion-item>\n      <ion-thumbnail item-start>\n        <img src={{c.flag}}>\n      </ion-thumbnail>\n        <h2>{{c.name}}</h2>\n        <ul>\n          <li (click)="selectCountry(c.name)">INFO</li>\n        </ul>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"D:\ProgrammingWork\Y2S4Project_MobileAppDev\countries\src\pages\region\region.html"*/,
+            selector: 'page-region',template:/*ion-inline-start:"D:\ProgrammingWork\Y2S4Project_MobileAppDev\countries\src\pages\region\region.html"*/'<!--\n  Generated template for the RegionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>RegionPage</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list *ngFor=\'let c of countries\'>\n    <ion-item>\n      <ion-thumbnail item-start>\n        <img src={{c.flag}}>\n      </ion-thumbnail>\n        <h1>{{c.name}}</h1>\n        <h3>{{c.subregion}}</h3>\n        <li ion-button (click)="selectCountry(c.name)">more info</li>\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"D:\ProgrammingWork\Y2S4Project_MobileAppDev\countries\src\pages\region\region.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_country_api_country_api__["a" /* CountryApiProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], RegionPage);
@@ -150,7 +150,6 @@ var HomePage = /** @class */ (function () {
         this.dataService = dataService;
         this.navCtrl = navCtrl;
         this.regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"]; //import this data?
-        this.country = "Ireland";
     }
     HomePage.prototype.selectRegion = function (region) {
         this.region = region;
@@ -172,7 +171,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"D:\ProgrammingWork\Y2S4Project_MobileAppDev\countries\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Ionic Blank\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <!-- COUNTRIES TEST-->\n\n  <!--<ion-list *ngFor=\'let country of countries\'>-->\n\n  \n\n  <ion-input placeholder="Search Country" [(ngModel)]="country" (keyup.enter)="selectCountry()"></ion-input>\n\n  <h4>Select Region:</h4>\n\n  <ion-list *ngFor=\'let region of regions\'>\n\n    <ion-item>\n\n      <li (click)="selectRegion(region)"> {{region}}</li>\n\n      <!--\n\n      <ion-thumbnail item-start>\n\n        <img src={{country.flag}}>\n\n      </ion-thumbnail>\n\n        <h2>{{country.name}}</h2>\n\n        <ul>\n\n          <li (click)="openRegionPage()">INFO</li>\n\n        </ul>\n\n      -->\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\ProgrammingWork\Y2S4Project_MobileAppDev\countries\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"D:\ProgrammingWork\Y2S4Project_MobileAppDev\countries\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Ionic Blank\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <!-- Entry must be exact -->  \n\n  <ion-input placeholder="Search Country" [(ngModel)]="country" (keyup.enter)="selectCountry()"></ion-input>\n\n  <h5>Select Region:</h5>\n\n  <ion-list *ngFor=\'let region of regions\'>\n\n    <ion-item>\n\n      <li ion-label (click)="selectRegion(region)"> {{region}}</li>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\ProgrammingWork\Y2S4Project_MobileAppDev\countries\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__providers_country_api_country_api__["a" /* CountryApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_country_api_country_api__["a" /* CountryApiProvider */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _b || Object])
     ], HomePage);
@@ -412,8 +411,8 @@ var CountryPage = /** @class */ (function () {
         this.countries = [];
         this.country = navParams.get("country");
     }
-    CountryPage.prototype.formatPopulation = function (population) {
-        return population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    CountryPage.prototype.formatNumber = function (number) {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     };
     CountryPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad CountryPage');
@@ -426,11 +425,12 @@ var CountryPage = /** @class */ (function () {
     };
     CountryPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-country',template:/*ion-inline-start:"D:\ProgrammingWork\Y2S4Project_MobileAppDev\countries\src\pages\country\country.html"*/'<!--\n  Generated template for the CountryPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>CountryPage</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list *ngFor=\'let c of countries\'>\n    <ion-item>\n      <ion-img width="200" height="150" src={{c.flag}}>\n      </ion-img>\n        <h2>{{c.name}}</h2>\n        <p>Region: {{c.region}}</p>\n        <p>Subregion: {{c.subregion}}</p>\n        <p>Capital: {{c.capital}}</p>\n        <!--<p>Population: {{c.population}}</p>-->\n        <p>Population: {{formatPopulation(c.population)}}</p>\n\n        <p>Regional Blocks:</p>\n        <ion-list *ngFor=\'let block of c.regionalBlocs\'>\n          <p>{{block.name}}</p>\n        </ion-list>\n        <p>Currencies:</p>\n        <ion-list *ngFor=\'let currency of c.currencies\'>\n          <p>{{currency.name}}</p>\n        </ion-list>\n        <p>Languages:</p>\n        <ion-list *ngFor=\'let language of c.languages\'>\n          <p>{{language.name}}</p>\n        </ion-list>\n\n\n\n    </ion-item>\n  </ion-list>\n</ion-content>\n\n'/*ion-inline-end:"D:\ProgrammingWork\Y2S4Project_MobileAppDev\countries\src\pages\country\country.html"*/,
+            selector: 'page-country',template:/*ion-inline-start:"D:\ProgrammingWork\Y2S4Project_MobileAppDev\countries\src\pages\country\country.html"*/'<!--\n  Generated template for the CountryPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>CountryPage</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list *ngFor=\'let c of countries\'>\n    <ion-item>\n      <ion-img width="200" height="150" src={{c.flag}}>\n      </ion-img>\n        <h1>{{c.name}}</h1>\n        <p>Capital: {{c.capital}}</p>\n        <p>Population: {{formatNumber(c.population)}}</p>\n        <p>Area: {{formatNumber(c.area)}}km²</p>\n\n        <p>Region: {{c.region}}</p>\n        <p>Subregion: {{c.subregion}}</p>\n        <p>Regional Blocks:</p>\n        <ion-list *ngFor=\'let block of c.regionalBlocs\'>\n          <ion-item>\n            <p>{{block.name}}</p>\n          </ion-item>\n        </ion-list>\n        <p>Currencies:</p>\n        <ion-list *ngFor=\'let currency of c.currencies\'>\n          <ion-item>\n            <p>{{currency.name}}</p>\n          </ion-item>\n        </ion-list>\n        <p>Languages:</p>\n        <ion-list *ngFor=\'let language of c.languages\'>\n          <ion-item>\n           <p>{{language.name}}</p>\n          </ion-item>\n        </ion-list>\n\n\n\n    </ion-item>\n  </ion-list>\n</ion-content>\n\n'/*ion-inline-end:"D:\ProgrammingWork\Y2S4Project_MobileAppDev\countries\src\pages\country\country.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_country_api_country_api__["a" /* CountryApiProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__providers_country_api_country_api__["a" /* CountryApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_country_api_country_api__["a" /* CountryApiProvider */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _c || Object])
     ], CountryPage);
     return CountryPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=country.js.map

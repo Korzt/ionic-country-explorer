@@ -16,10 +16,9 @@
       <ion-thumbnail item-start>
         <img src={{c.flag}}>
       </ion-thumbnail>
-        <h2>{{c.name}}</h2>
-        <ul>
-          <li (click)="selectCountry(c.name)">INFO</li>
-        </ul>
+        <h1>{{c.name}}</h1>
+        <h3>{{c.subregion}}</h3>
+        <li ion-button (click)="selectCountry(c.name)">more info</li>
     </ion-item>
   </ion-list>
 </ion-content>

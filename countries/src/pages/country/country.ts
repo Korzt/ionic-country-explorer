@@ -25,8 +25,8 @@ export class CountryPage {
     this.country = navParams.get("country");
   }
 
-  formatPopulation(population: string){
-    return population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  formatNumber(number: string){
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   ionViewDidLoad() {

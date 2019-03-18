@@ -23,10 +23,7 @@ import { CountryPage } from '../country/country';  //GV
 export class HomePage {
   regions:string[] = ["Africa", "Americas", "Asia", "Europe", "Oceania"]; //import this data?
   region: string;
-  country: string = "Ireland";
-  countriesAll: string[];
-  countries: string[];
-  keyword: string;
+  country: string;
 
   constructor(private dataService: CountryApiProvider,public navCtrl: NavController) {
 
