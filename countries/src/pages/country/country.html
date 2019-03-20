@@ -11,39 +11,60 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list *ngFor='let c of countries'>
-    <ion-item>
-      <ion-img width="200" height="150" src={{c.flag}}>
-      </ion-img>
-        <h1>{{c.name}}</h1>
-        <p>Capital: {{c.capital}}</p>
-        <p>Population: {{formatNumber(c.population)}}</p>
-        <p>Area: {{formatNumber(c.area)}}km²</p>
+  <div id="container">
+    <ion-list *ngFor='let c of countries'>
+      <ion-item>
 
-        <p>Region: {{c.region}}</p>
-        <p>Subregion: {{c.subregion}}</p>
-        <p>Regional Blocks:</p>
+        <ion-img width="200" height="150" src={{c.flag}} alt="c.name flag not loaded.">
+        </ion-img>
+
+        <div id="country_name">
+          <h1>{{c.name}}</h1>
+        </div>
+
+        <div id="country_details">
+          <p>Capital: {{c.capital}}</p>
+          <p>Population: {{formatNumber(c.population)}}</p>
+          <p>Area: {{formatNumber(c.area)}}km²</p>
+        </div>
+
+        <div id="region_details">
+          <p>Region: {{c.region}}</p>
+          <p>Subregion: {{c.subregion}}</p>
+        </div>
+
+      <div id="list_title">
+          <p>Regional Blocks:</p>
+      </div>
+        
+      <div id="list_details">
         <ion-list *ngFor='let block of c.regionalBlocs'>
-          <ion-item>
             <p>{{block.name}}</p>
-          </ion-item>
         </ion-list>
+      </div>
+
+      <div id="list_title">
         <p>Currencies:</p>
+      </div>
+        
+      <div id="list_details">
         <ion-list *ngFor='let currency of c.currencies'>
-          <ion-item>
             <p>{{currency.name}}</p>
-          </ion-item>
         </ion-list>
+      </div>
+
+      <div id="list_title">
         <p>Languages:</p>
+      </div>
+        
+      <div id="list_details">
         <ion-list *ngFor='let language of c.languages'>
-          <ion-item>
-           <p>{{language.name}}</p>
-          </ion-item>
+          <p>{{language.name}}</p>
         </ion-list>
+      </div>
 
-
-
-    </ion-item>
-  </ion-list>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
 

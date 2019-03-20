@@ -9,11 +9,15 @@
 <ion-content padding>
 
   <!-- Entry must be exact -->  
-  <ion-input placeholder="Search Country" [(ngModel)]="country" (keyup.enter)="selectCountry()"></ion-input>
-  <h5>Select Region:</h5>
-  <ion-list *ngFor='let region of regions'>
-    <ion-item>
-      <li ion-label (click)="selectRegion(region)"> {{region}}</li>
+  <div id="container">
+    <ion-item id="rounded_input">
+      <ion-input placeholder="Search Country" [(ngModel)]="country" (keyup.enter)="selectCountry()"></ion-input>
     </ion-item>
-  </ion-list>
+    <h5>Select Region:</h5>
+    <ion-list *ngFor='let region of regions'>
+        <ion-item id="rounded_selection">
+          <li ion-label (click)="selectRegion(region)"> {{region}}</li>
+        </ion-item>
+    </ion-list>
+  </div>
 </ion-content>

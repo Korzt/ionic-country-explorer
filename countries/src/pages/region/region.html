@@ -11,14 +11,20 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list *ngFor='let c of countries'>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src={{c.flag}}>
-      </ion-thumbnail>
-        <h1>{{c.name}}</h1>
-        <h3>{{c.subregion}}</h3>
+  <div id="container">
+    <ion-list *ngFor='let c of countries'>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src={{c.flag}}>
+        </ion-thumbnail>
+        <div id="country_name">
+          <h2>{{c.name}}</h2>
+        </div>
+        <div id="region_name">
+          <p>{{c.subregion}}</p>
+        </div>
         <li ion-button (click)="selectCountry(c.name)">more info</li>
-    </ion-item>
-  </ion-list>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>

@@ -1,3 +1,17 @@
 page-region {
 
+    #country_name{
+        font-weight: bold;
+        color: color($colors, primary, base);
+    }
+    
+    #region_name{
+        font-style: italic;
+    }
+
+    #container {
+        width: 600px; 
+        margin-left:auto; 
+        margin-right: auto; 
+    }
 }

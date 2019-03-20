@@ -1,3 +1,32 @@
 page-country {
+    #country_name{
+        font-weight: bold;
+        color: color($colors, primary, base);
+    }
 
+    #country_details{
+        font-style: italic;
+    }
+    
+    #region_details{
+        margin-top: 20px;
+        font-style: italic;
+    }
+
+    #list_title{
+        margin-top: 20px;
+        font-style: italic;
+    }
+
+    #list_details{
+        font-style: italic;
+        margin-left: 20px
+    }
+
+    #container {
+        width: 600px; 
+        margin-left:auto; 
+        margin-right: auto; 
+    }
 }
+

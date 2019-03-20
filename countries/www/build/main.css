@@ -25691,3 +25691,80 @@ ion-navbar.toolbar {
   padding-bottom: 4px;
   min-height: 46px;
 }
+
+page-country #country_name {
+  font-weight: bold;
+  color: #488aff;
+}
+
+page-country #country_details {
+  font-style: italic;
+}
+
+page-country #region_details {
+  margin-top: 20px;
+  font-style: italic;
+}
+
+page-country #list_title {
+  margin-top: 20px;
+  font-style: italic;
+}
+
+page-country #list_details {
+  font-style: italic;
+  margin-left: 20px;
+}
+
+page-country #container {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+page-home #rounded_input {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border: thin solid;
+  border-color: #488aff;
+}
+
+page-home #rounded_input .item-inner {
+  border-bottom-color: transparent !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+page-home #rounded_selection {
+  width: 100%;
+  margin-bottom: -10px;
+  border-radius: 5px;
+  border: thin solid;
+  border-color: #488aff;
+  text-align: center;
+  font-weight: bold;
+  color: #488aff;
+}
+
+page-home #container {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+page-region #country_name {
+  font-weight: bold;
+  color: #488aff;
+}
+
+page-region #region_name {
+  font-style: italic;
+}
+
+page-region #container {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
