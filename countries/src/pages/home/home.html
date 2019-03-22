@@ -1,3 +1,13 @@
+<!--
+  Author: Eoin Wilkie
+
+  HomePahe:
+  Entry page, displays information in the following format:
+  Search input - takes user search input and calls CountryPage
+  Select region - displays a button for each continent, displays RegionPage for 
+                  selected continent.
+  Previous searches - displays users 10 previous searched pages
+-->
 <ion-header>
   <ion-navbar>
     <ion-title>
@@ -13,6 +23,11 @@
     <ion-item id="rounded_input">
       <ion-input placeholder="Search Country" [(ngModel)]="country" (keyup.enter)="selectCountry()"></ion-input>
     </ion-item>
+
+    <ion-item id="rounded_previous">
+      <li ion-label (click)="selectPreviousSearch()"> Previous Searches </li>
+    </ion-item>
+    
     <h5>Select Region:</h5>
     <ion-list *ngFor='let region of regions'>
         <ion-item id="rounded_selection">

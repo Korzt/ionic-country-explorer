@@ -6,10 +6,8 @@ import { RegionPage } from '../region/region';  //GV
 import { HomePage } from '../home/home';  //GV
 
 /**
- * CountryPage
- * called from Region page, details information about country from https://restcountries.eu/ API
- * in following format: 
- * 
+ * Author: Eoin Wilkie
+ * County Page
  */
 
 @IonicPage()
@@ -21,10 +19,12 @@ export class CountryPage {
   country;
   countries:any = [];
 
+  //constructor is passed values from calling page
   constructor(private dataService: CountryApiProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.country = navParams.get("country");
   }
 
+  //formats number for display purposes: ###,###,###
   formatNumber(number: string){
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -33,9 +33,10 @@ export class CountryPage {
     console.log('ionViewDidLoad CountryPage');
   }
 
+  //OnInit, calls GetCountryData
   ngOnInit(){
     this.dataService.GetCountryData(this.country).subscribe((data)=>{
-    this.countries = data;  //check API for this
+    this.countries = data;
     });
   }
 }

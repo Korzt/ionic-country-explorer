@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+//must add these in order to pass arguements from one page to another
 import { HomePage } from '../pages/home/home';
 import { RegionPage } from '../pages/region/region';
 import { CountryPage } from '../pages/country/country';

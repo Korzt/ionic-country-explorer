@@ -28,6 +28,10 @@ export class HomePage {
   constructor(private dataService: CountryApiProvider,public navCtrl: NavController) {
 
   }
+  //previous search fucntion
+  selectPreviousSearch(){
+   //create function 
+  }
   selectRegion(region: string){ 
     this.region = region;
     this.openRegionPage(); //GV
