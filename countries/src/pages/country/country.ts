@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CountryApiProvider } from '../../providers/country-api/country-api';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 import { RegionPage } from '../region/region';  //GV
 import { HomePage } from '../home/home';  //GV
@@ -30,7 +31,7 @@ export class CountryPage {
   countries:any = [];
 
   //constructor is passed values from calling page
-  constructor(private dataService: CountryApiProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private iab: InAppBrowser, private dataService: CountryApiProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.country = navParams.get("country");
   }
 
@@ -39,7 +40,9 @@ export class CountryPage {
     for (let bloc of this.regionalBlocList){
       if (regionalBlock === bloc){
         this.wikiSearch = this.wiki + this.wikis[i];
-        console.log(this.wikiSearch);
+
+          
+      const browser = this.iab.create(this.wikiSearch);
         break;
       }
       i += 1;

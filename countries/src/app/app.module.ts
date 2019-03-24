@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx'
 
 import { MyApp } from './app.component';
 //must add these in order to pass arguements from one page to another
@@ -38,7 +39,8 @@ import { HttpModule } from '@angular/http';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CountryApiProvider
+    CountryApiProvider,
+    InAppBrowser
   ]
 })
 export class AppModule {}

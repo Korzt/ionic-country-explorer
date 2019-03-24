@@ -210,19 +210,21 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_region_region__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_country_country__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_country_api_country_api__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common_http__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_http__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser_ngx__ = __webpack_require__(397);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_region_region__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_country_country__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_country_api_country_api__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_common_http__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__(277);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -242,34 +244,35 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_region_region__["a" /* RegionPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_country_country__["a" /* CountryPage */]
+                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_region_region__["a" /* RegionPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_country_country__["a" /* CountryPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/country/country.module#CountryPageModule', name: 'CountryPage', segment: 'country', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/region/region.module#RegionPageModule', name: 'RegionPage', segment: 'region', priority: 'low', defaultHistory: [] }
                     ]
                 }),
-                __WEBPACK_IMPORTED_MODULE_10__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_11__angular_http__["a" /* HttpModule */]
+                __WEBPACK_IMPORTED_MODULE_11__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_12__angular_http__["a" /* HttpModule */]
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_region_region__["a" /* RegionPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_country_country__["a" /* CountryPage */]
+                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_region_region__["a" /* RegionPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_country_country__["a" /* CountryPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_9__providers_country_api_country_api__["a" /* CountryApiProvider */]
+                __WEBPACK_IMPORTED_MODULE_10__providers_country_api_country_api__["a" /* CountryApiProvider */],
+                __WEBPACK_IMPORTED_MODULE_5__ionic_native_in_app_browser_ngx__["a" /* InAppBrowser */]
             ]
         })
     ], AppModule);
@@ -389,6 +392,7 @@ var CountryApiProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_country_api_country_api__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser_ngx__ = __webpack_require__(397);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -401,13 +405,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Author: Eoin Wilkie
  * County Page
  */
 var CountryPage = /** @class */ (function () {
     //constructor is passed values from calling page
-    function CountryPage(dataService, navCtrl, navParams) {
+    function CountryPage(iab, dataService, navCtrl, navParams) {
+        this.iab = iab;
         this.dataService = dataService;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -427,7 +433,7 @@ var CountryPage = /** @class */ (function () {
             var bloc = _a[_i];
             if (regionalBlock === bloc) {
                 this.wikiSearch = this.wiki + this.wikis[i];
-                console.log(this.wikiSearch);
+                var browser = this.iab.create(this.wikiSearch);
                 break;
             }
             i += 1;
@@ -451,10 +457,10 @@ var CountryPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-country',template:/*ion-inline-start:"D:\ProgrammingWork\Y2S4Project_MobileAppDev\countries\src\pages\country\country.html"*/'<!--\n\n  Author: Eoin Wilkie\n\n\n\n  CountryPage:\n\n  Displays individual countries information in the following format:\n\n  Country flag\n\n  Country name, capital, population, area km2\n\n  Region name, subregion\n\n  Regional blocks\n\n  Currencies\n\n  Languages\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>CountryPage</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <div id="container">\n\n    <ion-list *ngFor=\'let c of countries\'>\n\n      <ion-item>\n\n\n\n        <ion-img width="200" height="150" src={{c.flag}} alt="c.name flag not loaded.">\n\n        </ion-img>\n\n\n\n        <div id="country_name">\n\n          <h1>{{c.name}}</h1>\n\n        </div>\n\n\n\n        <div id="country_details">\n\n          <p>Capital: {{c.capital}}</p>\n\n          <p>Population: {{formatNumber(c.population)}}</p>\n\n          <p>Area: {{formatNumber(c.area)}}km²</p>\n\n        </div>\n\n\n\n        <div id="region_details">\n\n          <p>Region: {{c.region}}</p>\n\n          <p>Subregion: {{c.subregion}}</p>\n\n        </div>\n\n\n\n      <div id="list_title">\n\n          <p>Regional Blocks:</p>\n\n      </div>\n\n        \n\n      <div id="list_details">\n\n        <ion-list *ngFor=\'let block of c.regionalBlocs\'>\n\n            <li ion-label (click)="launchWiki(block.acronym)">{{block.name}}</li>\n\n        </ion-list>\n\n      </div>\n\n\n\n      <div id="list_title">\n\n        <p>Currencies:</p>\n\n      </div>\n\n        \n\n      <div id="list_details">\n\n        <ion-list *ngFor=\'let currency of c.currencies\'>\n\n            <p>{{currency.name}}</p>\n\n        </ion-list>\n\n      </div>\n\n\n\n      <div id="list_title">\n\n        <p>Languages:</p>\n\n      </div>\n\n        \n\n      <div id="list_details">\n\n        <ion-list *ngFor=\'let language of c.languages\'>\n\n          <p>{{language.name}}</p>\n\n        </ion-list>\n\n      </div>\n\n\n\n      </ion-item>\n\n    </ion-list>\n\n  </div>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"D:\ProgrammingWork\Y2S4Project_MobileAppDev\countries\src\pages\country\country.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__providers_country_api_country_api__["a" /* CountryApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_country_api_country_api__["a" /* CountryApiProvider */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser_ngx__["a" /* InAppBrowser */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_in_app_browser_ngx__["a" /* InAppBrowser */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_country_api_country_api__["a" /* CountryApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_country_api_country_api__["a" /* CountryApiProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _d || Object])
     ], CountryPage);
     return CountryPage;
-    var _a, _b, _c;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=country.js.map
