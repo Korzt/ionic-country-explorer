@@ -45,7 +45,7 @@
         
       <div id="list_details">
         <ion-list *ngFor='let block of c.regionalBlocs'>
-            <p>{{block.name}}</p>
+            <li ion-label (click)="launchWiki(block.acronym)">{{block.name}}</li>
         </ion-list>
       </div>
 

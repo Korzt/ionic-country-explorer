@@ -16,6 +16,16 @@ import { HomePage } from '../home/home';  //GV
   templateUrl: 'country.html',
 })
 export class CountryPage {
+  regionalBlocList: string[] = ["EU", "EFTA", "CARICOM", "PA", "AU", "ASAN", "EEU", "AL", "ASEAN", "CAIS", "CEFTA", "NAFTA", "SAARC"];
+
+  wiki:string = "https://en.wikipedia.org/wiki/";
+  wikis:string[] = [
+    "European_Union", "European_Free_Trade_Association", "Caribbean_Community", "Pacific_Alliance", "African_Union", "Union_of_South_American_Nations",
+    "Eurasian_Economic_Union", "Arab_League", "Association_of_Southeast_Asian_Nations", "Central_American_Integration_System",
+    "Central_European_Free_Trade_Agreement", "North_American_Free_Trade_Agreement", "South_Asian_Association_for_Regional_Cooperation"
+  ];
+  wikiSearch:string;
+
   country;
   countries:any = [];
 
@@ -24,6 +34,17 @@ export class CountryPage {
     this.country = navParams.get("country");
   }
 
+  launchWiki(regionalBlock: string){
+    let i = 0;
+    for (let bloc of this.regionalBlocList){
+      if (regionalBlock === bloc){
+        this.wikiSearch = this.wiki + this.wikis[i];
+        console.log(this.wikiSearch);
+        break;
+      }
+      i += 1;
+    }
+  }
   //formats number for display purposes: ###,###,###
   formatNumber(number: string){
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
