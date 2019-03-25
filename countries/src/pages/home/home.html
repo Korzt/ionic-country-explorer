@@ -21,6 +21,8 @@
   <!-- Entry must be exact -->  
   <div id="container">
     <ion-item id="rounded_input">
+      <!-- Two way data-binding -->
+      <!-- Allows user to search for an individual country, rather than search region -->
       <ion-input placeholder="Search Country" [(ngModel)]="country" (keyup.enter)="selectCountry()"></ion-input>
     </ion-item>
 
@@ -28,6 +30,7 @@
       <li ion-label (click)="selectPreviousSearch()"> Previous Searches </li>
     </ion-item>
     
+    <!-- Allows user to search search region, returns list of countries in thes region -->
     <h5>Select Region:</h5>
     <ion-list *ngFor='let region of regions'>
         <ion-item id="rounded_selection">

@@ -43,11 +43,11 @@
           <p>Regional Blocks:</p>
       </div>
         
-      <div id="list_details">
-        <ion-list *ngFor='let block of c.regionalBlocs'>
+      <ion-list *ngFor='let block of c.regionalBlocs'>
+        <div id="list_details_links">
             <li ion-label (click)="launchWiki(block.acronym)">{{block.name}}</li>
-        </ion-list>
-      </div>
+        </div>
+      </ion-list>
 
       <div id="list_title">
         <p>Currencies:</p>

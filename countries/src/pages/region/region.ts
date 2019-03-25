@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CountryApiProvider } from '../../providers/country-api/country-api';
 
-import { HomePage } from '../home/home';  //GV
-import { CountryPage } from '../country/country';  //GV
+import { HomePage } from '../home/home';
+import { CountryPage } from '../country/country';
 
 /**
  * RegionPage 
  * called from HomePage, outputs a list of countrys within a selected region
  * in following format: 
+ * Country flag, country name and region. Information button.
  * 
  */
 
@@ -26,11 +27,11 @@ export class RegionPage {
     this.region = navParams.get("region");
   }
 
+  //selects country and opens countryPage for this selection.
   selectCountry(country: string){ 
     this.country = country;
-    this.openCountryPage(); //GV
+    this.openCountryPage();
   }
-
   openCountryPage(){
     this.navCtrl.push(CountryPage, {
     country: this.country });
@@ -42,7 +43,7 @@ export class RegionPage {
   
   ngOnInit(){
     this.dataService.GetRegionData(this.region).subscribe((data)=>{
-      this.countries = data;  //check API for this
+      this.countries = data;
     });
   }
 }

@@ -2,12 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-/*
-  Generated class for the CountryApiProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class CountryApiProvider {
 
@@ -15,19 +9,16 @@ export class CountryApiProvider {
     console.log('Hello CountryApiProvider Provider');
   }
 
+  //returns a country - used in countryPage
   GetCountryData(country: string): Observable<any>{
-    //return this.http.get('https://restcountries.eu/rest/v2/name/' + country);
     return this.http.get("https://restcountries.eu/rest/v2/name/" + country + "?fullText=true");
-    //return null;
   }
+  //returns a region - used in regionPage
   GetRegionData(region: string): Observable<any>{
-    //let region: string = "Europe"; //tests show only Europe until global scope variables
-    //return this.http.get('https://restcountries.eu/rest/v2/all');
     return this.http.get('https://restcountries.eu/rest/v2/region/' + region);
-    //return null;
   }
+  //returns all countries - unused
   GetAllCountriesData(): Observable<any>{
     return this.http.get('https://restcountries.eu/rest/v2/all');
-    //return null;
   }
 }

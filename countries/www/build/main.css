@@ -25716,6 +25716,15 @@ page-country #list_details {
   margin-left: 20px;
 }
 
+page-country #list_details_links {
+  color: #488aff;
+  text-decoration: underline;
+  font-size: 15px;
+  font-style: italic;
+  margin-left: 20px;
+  margin-bottom: -25px;
+}
+
 page-country #container {
   width: 600px;
   margin-left: auto;
