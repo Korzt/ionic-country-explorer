@@ -25719,10 +25719,8 @@ page-country #list_details {
 page-country #list_details_links {
   color: #488aff;
   text-decoration: underline;
-  font-size: 15px;
   font-style: italic;
   margin-left: 20px;
-  margin-bottom: -25px;
 }
 
 page-country #container {
@@ -25761,7 +25759,7 @@ page-home #rounded_previous {
 
 page-home #rounded_selection {
   width: 100%;
-  margin-bottom: -25px;
+  margin-bottom: -15px;
   border-radius: 5px;
   border: thin solid;
   border-color: #488aff;

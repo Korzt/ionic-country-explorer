@@ -10,6 +10,8 @@ import { RegionPage } from '../region/region';  //GV
 import { CountryPage } from '../country/country';  //GV
 
 
+//ionic serve -c --no-proxy
+
 /**
  * HomePage 
  * Home page of app.
