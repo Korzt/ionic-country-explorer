@@ -3,12 +3,10 @@ import { NavController } from 'ionic-angular';
 
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
-//import { NavController } from 'ionic-angular';
 
 import { CountryApiProvider } from '../../providers/country-api/country-api';
-import { RegionPage } from '../region/region';  //GV
-import { CountryPage } from '../country/country';  //GV
-
+import { RegionPage } from '../region/region';
+import { CountryPage } from '../country/country';
 
 //ionic serve -c --no-proxy
 
@@ -61,18 +59,11 @@ export class HomePage {
   
   selectRegion(region: string){ 
     this.region = region;
-    this.openRegionPage(); //GV
+    this.openRegionPage();
   }
   openRegionPage(){
     this.navCtrl.push(RegionPage, {
-      region: this.region //GV
+      region: this.region 
     });
   }
-
-  /*ngOnInit(){
-    //this may not be used.
-    this.dataService.GetAllCountriesData().subscribe((data)=>{
-      this.countries = data;  //check API for this
-    });
-  }*/
 }

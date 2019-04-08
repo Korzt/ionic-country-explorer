@@ -36,7 +36,6 @@ export class CountryPage {
   //constructor is passed values from calling page
   constructor(public storage: Storage, private iab: InAppBrowser, private dataService: CountryApiProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.country = navParams.get("country");
-    //save country to localStorage
   }
 
   //launches wikipedia fpr IAB
@@ -68,6 +67,7 @@ export class CountryPage {
     });
   }
   ionViewWillEnter(){
+    //save country to localStorage
     this.storage.set("PreviousSearch", this.country);
   }
 }
