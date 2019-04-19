@@ -19,10 +19,7 @@
   <div id="container">
     <ion-list *ngFor='let c of countries'>
       <ion-item>
-
-        <ion-img width="150" height="100" src={{c.flag}} alt="c.name flag not loaded.">
-        </ion-img>
-        
+        <img width="150" height="100" src={{c.flag}} alt="c.name flag not loaded.">
         <div id="country_name">
           <h1>{{c.name}}</h1>
         </div>
